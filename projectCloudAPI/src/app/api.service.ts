@@ -13,7 +13,7 @@ latitude :number = 4.25;
 
   constructor( private http: HttpClient) {}
 
-  getTrending(){
-    return this.http.get("https://api.foursquare.com/v2/venues/search?ll=longtitude,latitude&client_id=client_id&client_secret=client_secret&v=20190321");
+  getplaces(){
+    return this.http.get<Response>("https://api.foursquare.com/v2/venues/search?ll=longtitude,latitude&client_id=client_id&client_secret=client_secret&v=20190321");
   }
 }

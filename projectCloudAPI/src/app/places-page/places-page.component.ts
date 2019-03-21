@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-places-page',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./places-page.component.sass']
 })
 export class PlacesPageComponent implements OnInit {
+places :string[] = [];
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private api: ApiService) {
+    this.api.getplaces().subscribe((results => {
+      console.log(results);
+    }));
   }
+
+  ngOnInit() {}
 
 }
