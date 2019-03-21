@@ -9,25 +9,21 @@ $headerColor: rgb(0,238,244);
     h2{
       margin-left:  1em;
       text-align: left;
-      line-height: 2em;
+      line-height: 2.5em;
     }
     #navtabs{
-      line-height: 2em;
-      color: rgb(0,0,0);
+      text-align: center;
+      margin-top: 1em;
       button{
+        color: rgb(255,255,255);
+        margin-top: 0.5em;
+        margin-left: 2em;
+        margin-right: 2em;
         background: $headerColor;
         border: none;
         }
+        button:hover{
+          color: rgb(0,0,0);
+        }
       }
   }
-input{
-  margin-top: 1em;
-}
-label{
-  margin-left: 1em;
-  margin-right: 1em;
-}
-#inputfield{
-  display: grid;
-  grid-template-columns: 25% 25% 50%;
-}
