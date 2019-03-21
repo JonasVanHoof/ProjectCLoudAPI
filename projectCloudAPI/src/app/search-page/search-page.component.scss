@@ -1,0 +1,11 @@
+input{
+  margin-top: 1em;
+}
+label{
+  margin-left: 1em;
+  margin-right: 1em;
+}
+#inputfield{
+  display: grid;
+  grid-template-columns: 25% 25% 50%;
+}

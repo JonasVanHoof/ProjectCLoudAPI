@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { TrendingPageComponent } from './trending-page/trending-page.component';
+import { SearchPageComponent } from './search-page/search-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    TrendingPageComponent
+    TrendingPageComponent,
+    SearchPageComponent
   ],
   imports: [
     BrowserModule,
