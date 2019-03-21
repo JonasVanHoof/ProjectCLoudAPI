@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import 'interfacePlace';
 import { Keys } from './keys';
+import { RootObject } from 'interfacePlace';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,6 @@ client_secret :string;
   }
 
   getplaces(){
-    return this.http.get<Response>("https://api.foursquare.com/v2/venues/search?ll=longtitude,latitude&client_id=client_id&client_secret=client_secret&v=20190321");
+    return this.http.get<RootObject>("http://api.foursquare.com/v2/venues/search?ll=" + this.longtitude + "," + this.latitude + "&client_id="+ this.client_id +"&client_secret=" + this.client_secret +"&v=20190321");
   }
 }
