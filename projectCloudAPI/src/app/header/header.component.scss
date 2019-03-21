@@ -1,0 +1,33 @@
+$headerColor: rgb(0,238,244);
+
+  header{
+  margin-top: 0;
+  background: $headerColor;
+  height: 4em;
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+    h2{
+      margin-left:  1em;
+      text-align: left;
+      line-height: 2em;
+    }
+    #navtabs{
+      line-height: 2em;
+      color: rgb(0,0,0);
+      button{
+        background: $headerColor;
+        border: none;
+        }
+      }
+  }
+input{
+  margin-top: 1em;
+}
+label{
+  margin-left: 1em;
+  margin-right: 1em;
+}
+#inputfield{
+  display: grid;
+  grid-template-columns: 25% 25% 50%;
+}
