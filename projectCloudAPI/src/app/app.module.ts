@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { TrendingPageComponent } from './trending-page/trending-page.component';
 import { SearchPageComponent } from './search-page/search-page.component';
+import { PlacesPageComponent } from './places-page/places-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     TrendingPageComponent,
-    SearchPageComponent
+    SearchPageComponent,
+    PlacesPageComponent
   ],
   imports: [
     BrowserModule,
