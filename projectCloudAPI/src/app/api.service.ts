@@ -1,17 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import 'interfacePlace';
+import { Keys } from './keys';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-client_id :string = "41NV1V1QCP1WNT1EGPPWTONPOWUSTBWAQC0LQE5OR0L5A1VA";
-client_secret :string = "0VGNPPDOPF452YKPMSKV1TNOHTGAMTR2M1ID1USKTNESBGZA";
 longtitude :number = 51.13;
 latitude :number = 4.25;
+keys :Keys;
+client_id : string;
+client_secret :string;
 
-  constructor( private http: HttpClient) {}
+  constructor( private http: HttpClient) {
+    this.keys = new Keys();
+    this.client_id = this.keys.client_id;
+    this.client_secret = this.keys.client_secret;
+  }
 
   getplaces(){
     return this.http.get<Response>("https://api.foursquare.com/v2/venues/search?ll=longtitude,latitude&client_id=client_id&client_secret=client_secret&v=20190321");
