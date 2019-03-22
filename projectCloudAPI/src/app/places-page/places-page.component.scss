@@ -1,11 +1,44 @@
-ul{
-  li{
-    padding: 2em 10em;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-      div{
-        text-align: left;
-        height: 4em;
-      }
+body{
+  background: rgb(253,253,249);
+  ul{
+    li{
+      padding-left: 30%;
+      padding-right: 30%;
+      padding-top: 0.25em;
+      padding-bottom: 0.25em;
+        div{
+          border: solid 0.5px rgb(182, 182, 182);
+          margin: 0.5em 0.5em;
+          display: grid;
+          grid-template-rows: repeat(1em, 4);
+          text-align: left;
+          height: 10em;
+          width: auto;
+          strong{
+            margin-top: 1em;
+            margin-left: 1em;
+          }
+          a{
+            color: blue;
+            margin-left: 1em;
+          }
+          img{
+            margin-left: 1em;
+            width: 3.5em;
+            height: 3.5em;
+            border: solid 1px rgb(0, 0, 0);
+          }
+        }
+    }
+  }
+}
+footer{
+  width: auto;
+  height: 5em;
+  background: rgb(182, 182, 182);
+  a{
+    color: white;
+    text-decoration-line: none;
+    text-align: right;
   }
 }

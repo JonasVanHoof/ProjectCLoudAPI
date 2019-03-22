@@ -11,14 +11,16 @@ import { Venue } from 'interfacePlace';
 export class PlacesPageComponent implements OnInit {
 places :Venue[] = [];
 addresses :string[] = [];
+category :string;
 
   constructor(private api: ApiService) {
     this.api.getplaces().subscribe((results => {
       console.log(results);
       this.places = results.response.venues;
       for(let i = 0; i < this.places.length; i++)
-      this.addresses.push(this.places[i].location.address);
+        this.addresses.push(this.places[i].location.address);
         console.log(this.addresses);
+        console.log(this.places[0].categories);
     }));
   }
 
