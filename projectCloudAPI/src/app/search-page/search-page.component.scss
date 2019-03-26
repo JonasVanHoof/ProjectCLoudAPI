@@ -2,10 +2,14 @@ input{
   margin-top: 1em;
 }
 label{
-  margin-left: 1em;
+  //margin-left: 1em;
   margin-right: 1em;
 }
 #inputfield{
+  padding-top: 4em;
   display: grid;
-  grid-template-columns: 25% 25% 50%;
+  grid-template-columns: repeat(3, 1fr);
+  div{
+    text-align: center;
+  }
 }

@@ -10,7 +10,7 @@ import { RootObject, Venue } from 'interfacePlace';
 export class ApiService {
 longtitude :number = 51.23;
 latitude :number = 4.41;
-radius :number = 1000;
+radius :number = 3000;
 keys :Keys;
 client_id : string;
 client_secret :string;
