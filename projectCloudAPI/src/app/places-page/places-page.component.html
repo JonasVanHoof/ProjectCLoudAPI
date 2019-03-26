@@ -3,8 +3,8 @@
     <li *ngFor="let place of places">
       <div>
           <strong>{{place.name}}</strong>
-          <a>address</a>
-          <img src="https://image.flaticon.com/icons/svg/3/3901.svg" alt="img">
+          <p>{{place.location.address}}</p>
+          <img [src]="place.categories[0].icon.prefix + 64 + place.categories[0].icon.suffix" alt="img">
       </div>
     </li>
   </ul>
