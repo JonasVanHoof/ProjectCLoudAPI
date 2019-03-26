@@ -15,7 +15,6 @@ category :string;
 
   constructor(private api: ApiService) {
     this.api.getplaces().subscribe((results => {
-      console.log(results);
       this.places = results.response.venues;
     }));
   }

@@ -1,11 +1,13 @@
 $headerColor: rgb(59, 229, 206);
 
   header{
-  margin-top: 0;
-  background: $headerColor;
-  height: 4em;
-  display: grid;
-  grid-template-columns: 25% 50% 25%;
+    position: fixed;
+    width: 100%;
+    margin-top: 0;
+    background: $headerColor;
+    height: 4em;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
     h2{
       margin-left:  1em;
       text-align: left;

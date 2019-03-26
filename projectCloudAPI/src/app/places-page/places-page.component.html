@@ -3,8 +3,8 @@
     <li *ngFor="let place of places">
       <div>
           <strong>{{place.name}}</strong>
-          <p>{{place.location.address}}</p>
-          <img [src]="place.categories[0].icon.prefix + 64 + place.categories[0].icon.suffix" alt="img">
+          <p *ngIf='place.location.address'>{{place.location.address}}</p>
+          <img *ngIf='place.categories' [src]="place.categories[0].icon.prefix + 64 + place.categories[0].icon.suffix" alt="img">
       </div>
     </li>
   </ul>

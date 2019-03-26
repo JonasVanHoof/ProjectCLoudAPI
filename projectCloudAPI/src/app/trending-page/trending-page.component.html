@@ -1,2 +1,11 @@
-
-<p>Trending works!</p>
+<body>
+  <ul>
+    <li *ngFor="let place of trending">
+      <div>
+          <strong>{{place.name}}</strong>
+          <p *ngIf='place.location.address'>{{place.location.address}}</p>
+          <img *ngIf='place.categories' [src]="place.categories[0].icon.prefix + 64 + place.categories[0].icon.suffix" alt="img">
+      </div>
+    </li>
+  </ul>
+</body>
