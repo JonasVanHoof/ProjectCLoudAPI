@@ -8,8 +8,8 @@ import { RootObject, Venue } from 'interfacePlace';
   providedIn: 'root'
 })
 export class ApiService {
-longtitude :number = 51.23;
-latitude :number = 4.41;
+longtitude :number = /*51.23;*/51.26;
+latitude :number = /*4.41;*/4.76;
 radius :number = 3000;
 keys :Keys;
 client_id : string;

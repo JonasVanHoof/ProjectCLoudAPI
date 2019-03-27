@@ -1,14 +1,17 @@
 <div id="inputfield">
     <div>
         <label for="city">City: </label>
-        <input id="city">
+        <input #city placeholder="city">
+        <button (onclick)='SearchGivenInput'></button>
     </div>
     <div>
-        <label for="activity">Categorie: </label>
-        <input id="activity">
+        <label for="categorie">Categorie: </label>
+        <input #categorie placeholder="categorie">
+        <button (onclick)='SearchGivenInput'></button>
     </div>
     <div>
         <label for="maxDistance">Max-distance: </label>
-        <input id="maxDistance">
+        <input #maxDistance placeholder="distance from you" inputmode="numeric">
+        <button (onclick)='SearchGivenInput'></button>
     </div>
   </div>

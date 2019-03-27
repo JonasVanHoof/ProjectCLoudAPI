@@ -6,10 +6,19 @@ label{
   margin-right: 1em;
 }
 #inputfield{
+  height: 4em;
   padding-top: 4em;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   div{
     text-align: center;
+    button{
+      line-height: 2em;
+      background: url("https://image.flaticon.com/icons/svg/49/49116.svg") no-repeat;
+      width: 2em;
+      height: 2em;
+      border: 0.5px solid black;
+
+    }
   }
 }
