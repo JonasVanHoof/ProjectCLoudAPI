@@ -12,6 +12,7 @@ export class PlacesPageComponent implements OnInit {
 places :Venue[] = [];
 
   constructor(private api: ApiService) {
+    console.log("place component");
     this.api.getplaces().subscribe((results => {
       this.places = results.response.venues;
     }));

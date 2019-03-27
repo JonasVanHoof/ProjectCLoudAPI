@@ -13,7 +13,7 @@ trending :Venue[] = [];
   constructor(private api :ApiService) {
     this.api.gettrending().subscribe((trending => {
       this.trending = trending.response.venues;
-      console.log(this.trending);
+      console.log("trending component");
     }));
    }
 

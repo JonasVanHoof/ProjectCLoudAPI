@@ -1,17 +1,26 @@
 <div id="inputfield">
     <div>
-        <label for="city">City: </label>
-        <input #city placeholder="city">
-        <button (click)='SearchGivenInput()'></button>
-    </div>
-    <div>
-        <label for="categorie">Categorie: </label>
-        <input #categorie placeholder="categorie">
-        <button (click)='SearchGivenInput()'></button>
-    </div>
-    <div>
-        <label for="maxDistance">Max-distance: </label>
-        <input #maxDistance placeholder="distance from you" inputmode="numeric">
+        <label for="search">Search: </label>
+        <input #search placeholder="city">
         <button (click)='SearchGivenInput()'></button>
     </div>
   </div>
+
+  <div class='showResult'>
+      <p *ngIf='searchedPlaces.length == 0; else Search'> No search</p>
+  <ng-template #Search>
+    <ul>
+      <li *ngFor="let search of searchedPlaces">
+        <div class='search'>
+          <strong>{{search.name}}</strong>
+          <div>
+              <p *ngIf='search.location.address'>{{search.location.address}}</p>
+              <p>{{search.location.distance}} meters away</p>
+          </div>
+          <img *ngIf='search.categories' [src]="search.categories[0].icon.prefix + 64 + search.categories[0].icon.suffix"
+            alt="img">
+        </div>
+      </li>
+    </ul>
+  </ng-template>
+</div>

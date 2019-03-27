@@ -2,14 +2,14 @@
   <p *ngIf='trending.length == 0; else Trend'> No trending</p>
   <ng-template #Trend>
     <ul>
-      <li *ngFor="let place of trending">
-        <div class='place'>
-          <strong>{{place.name}}</strong>
+      <li *ngFor="let trend of trending">
+        <div class='trend'>
+          <strong>{{trend.name}}</strong>
           <div>
-              <p *ngIf='place.location.address'>{{place.location.address}}</p>
-              <p>{{place.location.distance}} meters away</p>
+              <p *ngIf='trend.location.address'>{{trend.location.address}}</p>
+              <p>{{trend.location.distance}} meters away</p>
           </div>
-          <img *ngIf='place.categories' [src]="place.categories[0].icon.prefix + 64 + place.categories[0].icon.suffix"
+          <img *ngIf='trend.categories' [src]="trend.categories[0].icon.prefix + 64 + trend.categories[0].icon.suffix"
             alt="img">
         </div>
       </li>

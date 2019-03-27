@@ -17,6 +17,7 @@ client_secret :string;
 VENUE_ID :string;
 
   constructor( private http: HttpClient) {
+    console.log("api init");
     this.keys = new Keys();
     this.client_id = this.keys.client_id;
     this.client_secret = this.keys.client_secret;
@@ -29,6 +30,6 @@ VENUE_ID :string;
     return this.http.get<(RootObject)>("https://api.foursquare.com/v2/venues/trending?ll=" + this.longtitude + "," + this.latitude + "&radius=" + this.radius + "&client_id="+ this.client_id +"&client_secret=" + this.client_secret +"&v=20190321");
   }
   searchVenue(word :string){
-    return this.http.get<RootObject>("http://api.foursquare.com/v2/venues/search?&query=" + word + " ll=" + this.longtitude + "," + this.latitude + "&radius=99999999&client_id="+ this.client_id +"&client_secret=" + this.client_secret +"&v=20190321");
+    return this.http.get<RootObject>("http://api.foursquare.com/v2/venues/search?&query=" + word + "&ll=" + this.longtitude + "," + this.latitude + "&radius=99999999&client_id="+ this.client_id +"&client_secret=" + this.client_secret +"&v=20190321");
   }
 }

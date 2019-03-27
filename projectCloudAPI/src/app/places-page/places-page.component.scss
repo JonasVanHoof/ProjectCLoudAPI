@@ -1,4 +1,4 @@
-body{
+.places{
   background: rgb(253,253,249);
   padding-top: 4em;
   ul{
@@ -7,7 +7,7 @@ body{
       padding-right: 30%;
       padding-top: 0.25em;
       padding-bottom: 0.25em;
-        div{
+        .place{
           border: solid 0.5px rgb(182, 182, 182);
           margin: 0.5em 0.5em;
           display: grid;
@@ -31,15 +31,5 @@ body{
           }
         }
     }
-  }
-}
-footer{
-  width: auto;
-  height: 5em;
-  background: rgb(182, 182, 182);
-  a{
-    color: white;
-    text-decoration-line: none;
-    text-align: right;
   }
 }
