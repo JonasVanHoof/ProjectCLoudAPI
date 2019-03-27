@@ -1,4 +1,4 @@
-.places{
+body{
   background: rgb(253,253,249);
   padding-top: 4em;
   ul{
@@ -19,8 +19,11 @@
             margin-top: 1em;
             margin-left: 1em;
           }
-          p{
-            margin-left: 1em;
+          div{
+            p{
+              display: inline-block;
+              margin-left: 1em;
+            }
           }
           img{
             background: black;

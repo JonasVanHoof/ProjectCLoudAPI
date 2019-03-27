@@ -1,14 +1,19 @@
 <body>
-  <ul>
-    <li *ngFor="let place of places">
-      <div class="place">
-          <strong>{{place.name}}</strong>
-          <div>
-            <p *ngIf='place.location.address'>{{place.location.address}}</p>
-            <p>{{place.location.distance}} meters away</p>
+    <p *ngIf='places.length == 0; else showPlaces'> No places</p>
+    <ng-template #showPlaces>
+      <ul>
+        <li *ngFor="let place of places">
+          <div class="place">
+            <strong>{{place.name}}</strong>
+            <div>
+              <p *ngIf='place.location.address'>{{place.location.address}}</p>
+              <p>{{place.location.distance}} meters away</p>
+            </div>
+            <img *ngIf='place.categories' [src]="place.categories[0].icon.prefix + 64 + place.categories[0].icon.suffix"
+              alt="img">
           </div>
-          <img *ngIf='place.categories' [src]="place.categories[0].icon.prefix + 64 + place.categories[0].icon.suffix" alt="img">
-      </div>
-    </li>
-  </ul>
+        </li>
+      </ul>
+    </ng-template>
 </body>
+
