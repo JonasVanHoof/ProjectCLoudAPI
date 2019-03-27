@@ -1,4 +1,6 @@
 import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
+import { ApiService } from '../api.service';
+import { Venue } from 'interfacePlace';
 
 @Component({
   selector: 'app-search-page',
@@ -13,9 +15,10 @@ export class SearchPageComponent implements OnInit {
 city :string;
 categorie :string;
 maxDistance :number;
+searchedPlaces :Venue[] = [];
 
-  constructor() {
-    console.log('Search component');
+  constructor(private api :ApiService) {
+
   }
 
   ngOnInit() {
@@ -25,6 +28,10 @@ maxDistance :number;
     this.city = this.inputCity.nativeElement.value;
     this.categorie = this.inputCategorie.nativeElement.value;
     this.maxDistance = this.inputMaxDistance.nativeElement.value;
+
+    this.api.searchVenue(this.city).subscribe((word => {
+      this.searchedPlaces = word.response.venues;
+    }));
     console.log(this.city);
     console.log(this.categorie);
     console.log(this.maxDistance);

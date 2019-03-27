@@ -1,11 +1,20 @@
 <body>
-  <ul>
-    <li *ngFor="let place of trending">
-      <div>
+  <p *ngIf='trending.length == 0; else Trend'> No trending</p>
+  <ng-template #Trend>
+    <ul>
+      <li *ngFor="let place of trending">
+        <div class='place'>
           <strong>{{place.name}}</strong>
-          <p *ngIf='place.location.address'>{{place.location.address}}</p>
-          <img *ngIf='place.categories' [src]="place.categories[0].icon.prefix + 64 + place.categories[0].icon.suffix" alt="img">
-      </div>
-    </li>
-  </ul>
+          <div>
+              <p *ngIf='place.location.address'>{{place.location.address}}</p>
+              <p>{{place.location.distance}} meters away</p>
+          </div>
+          <img *ngIf='place.categories' [src]="place.categories[0].icon.prefix + 64 + place.categories[0].icon.suffix"
+            alt="img">
+        </div>
+      </li>
+    </ul>
+  </ng-template>
+
+
 </body>

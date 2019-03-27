@@ -10,8 +10,6 @@ import { Venue } from 'interfacePlace';
 })
 export class PlacesPageComponent implements OnInit {
 places :Venue[] = [];
-addresses :string[] = [];
-category :string;
 
   constructor(private api: ApiService) {
     this.api.getplaces().subscribe((results => {
