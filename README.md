@@ -1,4 +1,4 @@
-# ProjectCLoudAPI
+# ProjectCloudAPI
 
 ## Foursquare API
 
