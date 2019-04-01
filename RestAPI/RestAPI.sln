@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project_CloudAPI", "Project_CloudAPI\Project_CloudAPI.csproj", "{4DDED029-024D-4E2E-AB04-F730EECC5003}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestAPI", "RestAPI\RestAPI.csproj", "{C9ABC83D-8D83-4EBD-A1DD-CB5F8E442655}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4DDED029-024D-4E2E-AB04-F730EECC5003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4DDED029-024D-4E2E-AB04-F730EECC5003}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4DDED029-024D-4E2E-AB04-F730EECC5003}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4DDED029-024D-4E2E-AB04-F730EECC5003}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9ABC83D-8D83-4EBD-A1DD-CB5F8E442655}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9ABC83D-8D83-4EBD-A1DD-CB5F8E442655}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9ABC83D-8D83-4EBD-A1DD-CB5F8E442655}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9ABC83D-8D83-4EBD-A1DD-CB5F8E442655}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {48285472-C431-45AB-98C6-D55F8C3C9A51}
+		SolutionGuid = {6DD090F1-6075-4955-A2F4-E7A15908E0B1}
 	EndGlobalSection
 EndGlobal
