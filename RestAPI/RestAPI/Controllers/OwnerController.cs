@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using RestAPI.Model;
+using RestAPI.Models;
 
 namespace RestAPI.Controllers
 {
@@ -10,9 +12,27 @@ namespace RestAPI.Controllers
     [ApiController]
     public class OwnerController : Controller
     {
-        public IActionResult Index()
+        public static List<Owner> owners = new List<Owner>();
+    
+        public LibraryContext context { get; set; }
+
+        public OwnerController(LibraryContext con)
         {
-            return View();
+            context = con;
+        }
+
+        [HttpGet]
+        public List<Owner> GetAllOwners()
+        {
+            return context.Owner.ToList();
+        }
+
+        [Route("/{id}")]
+        [HttpGet]
+        public ActionResult<Owner> getOwnerById(int id)
+        {
+            var theOwner = context.Owner.Find(id);
+            return theOwner;
         }
     }
 }

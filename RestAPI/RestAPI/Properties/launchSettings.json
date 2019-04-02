@@ -12,7 +12,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "api/Circus_material",
+      "launchUrl": "api/Owner",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
