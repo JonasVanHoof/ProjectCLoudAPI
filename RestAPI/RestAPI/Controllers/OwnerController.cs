@@ -59,5 +59,20 @@ namespace RestAPI.Controllers
             var theOwner = context.Owner.Find(id);
             return theOwner;
         }
+
+        [Route("/{name}")]
+        [HttpGet]
+        public ActionResult<Owner> getOwnerByName(string name)
+        {
+            var theOwner = context.Owner.Find(name);
+            return theOwner;
+        }
+        [HttpPut]
+        public ActionResult<Owner> UpdateOwner([FromBody] Owner owner)
+        {
+            context.Owner.Update(owner);
+            context.SaveChanges();
+            return Created("", owner);
+        }
     }
 }
