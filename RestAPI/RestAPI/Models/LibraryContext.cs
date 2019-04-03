@@ -11,9 +11,7 @@ namespace RestAPI.Models
     {
         public LibraryContext(DbContextOptions<LibraryContext> DBconfig)
                                     : base(DBconfig)
-        {
-
-        }
+        {}
         public DbSet<Owner> Owner { get; set; }
         public DbSet<Circus_material> Material { get; set; }
     }

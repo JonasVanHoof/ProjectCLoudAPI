@@ -16,7 +16,6 @@ namespace RestAPI.Models
             {
                 var autoOwner1 = new Owner()
                 {
-                    Id = 1,
                     Firstname = "Jonas",
                     Lastname = "Van Hoof",
                     Age = 19,
@@ -24,7 +23,6 @@ namespace RestAPI.Models
                 };
                 var autoOwner2 = new Owner()
                 {
-                    Id = 2,
                     Firstname = "Joren",
                     Lastname = "Verdyck",
                     Age = 18,

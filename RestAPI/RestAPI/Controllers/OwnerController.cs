@@ -26,23 +26,24 @@ namespace RestAPI.Controllers
         //{
         //    var autoOwner1 = new Owner()
         //    {
-        //        _id = 1,
+        //        Id = 1,
         //        Firstname = "Jonas",
         //        Lastname = "Van Hoof",
         //        Age = 19,
         //        Gender = "male"
         //    };
-        //    owners.Add(autoOwner1);
+        //    context.Add(autoOwner1);
         //    var autoOwner2 = new Owner()
         //    {
-        //        _id = 2,
+        //        Id = 2,
         //        Firstname = "Joren",
         //        Lastname = "Verdyck",
         //        Age = 18,
         //        Gender = "male"
         //    };
-        //    owners.Add(autoOwner2);
-        //    return owners;
+        //    context.Add(autoOwner2);
+        //    context.SaveChanges();
+        //    return context.Owner.ToList();
         //}
 
         [HttpGet]
