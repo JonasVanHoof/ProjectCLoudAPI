@@ -21,6 +21,30 @@ namespace RestAPI.Controllers
             context = con;
         }
 
+        //[HttpGet]
+        //public List<Owner> getDefaultOwners()
+        //{
+        //    var autoOwner1 = new Owner()
+        //    {
+        //        _id = 1,
+        //        Firstname = "Jonas",
+        //        Lastname = "Van Hoof",
+        //        Age = 19,
+        //        Gender = "male"
+        //    };
+        //    owners.Add(autoOwner1);
+        //    var autoOwner2 = new Owner()
+        //    {
+        //        _id = 2,
+        //        Firstname = "Joren",
+        //        Lastname = "Verdyck",
+        //        Age = 18,
+        //        Gender = "male"
+        //    };
+        //    owners.Add(autoOwner2);
+        //    return owners;
+        //}
+
         [HttpGet]
         public List<Owner> GetAllOwners()
         {

@@ -9,8 +9,8 @@ namespace RestAPI.Models
 {
     public class LibraryContext: DbContext
     {
-        public LibraryContext(DbContextOptions<LibraryContext> options)
-                                    : base(options)
+        public LibraryContext(DbContextOptions<LibraryContext> DBconfig)
+                                    : base(DBconfig)
         {
 
         }
