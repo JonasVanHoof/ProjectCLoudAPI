@@ -52,6 +52,7 @@ namespace RestAPI.Controllers
             return context.Owner.ToList();
         }
 
+        #region Route("/id")
         [Route("/{id}")]
         [HttpGet]
         public ActionResult<Owner> getOwnerById(int id)
@@ -59,6 +60,19 @@ namespace RestAPI.Controllers
             var theOwner = context.Owner.Find(id);
             return theOwner;
         }
+        [HttpDelete]
+        public IActionResult DeleteOwner(int id)
+        {
+            var theOwner = context.Owner.Find(id);
+            if (theOwner == null)
+            {
+                return NotFound();
+            }
+            context.Remove(theOwner);
+            context.SaveChanges();
+            return NoContent();
+        }
+        #endregion
 
         [Route("/{name}")]
         [HttpGet]
@@ -67,6 +81,7 @@ namespace RestAPI.Controllers
             var theOwner = context.Owner.Find(name);
             return theOwner;
         }
+
         [HttpPut]
         public ActionResult<Owner> UpdateOwner([FromBody] Owner owner)
         {
