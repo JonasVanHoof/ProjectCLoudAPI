@@ -52,8 +52,7 @@ namespace RestAPI.Controllers
             return context.Owner.ToList();
         }
 
-        #region Route("/id")
-        [Route("/{id}")]
+        [Route("id={id}")]
         [HttpGet]
         public ActionResult<Owner> getOwnerById(int id)
         {
@@ -72,22 +71,30 @@ namespace RestAPI.Controllers
             context.SaveChanges();
             return NoContent();
         }
-        #endregion
 
-        [Route("/{name}")]
-        [HttpGet]
-        public ActionResult<Owner> getOwnerByName(string name)
-        {
-            var theOwner = context.Owner.Find(name);
-            return theOwner;
-        }
+        //[Route("query={name}")]
+        //[HttpGet]
+        //public ActionResult<Owner> getOwnerByName(string name)
+        //{
+        //    var theOwner = context.Owner.Find(name);
+        //    return theOwner;
+        //}
 
         [HttpPut]
         public ActionResult<Owner> UpdateOwner([FromBody] Owner owner)
         {
-            context.Owner.Update(owner);
+            var update = context.Owner.Find(owner);
+            if (update == null)
+                return NotFound();
+
+            update.Age = owner.Age;
+            update.Firstname = owner.Firstname;
+            update.Lastname = owner.Lastname;
+            update.Gender = owner.Gender;
+
             context.SaveChanges();
-            return Created("", owner);
+            return Ok(update);
         }
+
     }
 }

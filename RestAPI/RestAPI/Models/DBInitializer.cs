@@ -12,6 +12,14 @@ namespace RestAPI.Models
         {
             context.Database.EnsureCreated();
 
+            var autoOwner = new Owner()
+            {
+                Firstname = "Jonas",
+                Lastname = "Van Hoof",
+                Age = 19,
+                Gender = "male"
+            };
+
             if (!context.Owner.Any())
             {
                 var autoOwner1 = new Owner()
@@ -30,6 +38,21 @@ namespace RestAPI.Models
                 };
                 context.Add(autoOwner1);
                 context.Add(autoOwner2);
+                context.SaveChanges();
+            }
+
+            context.Owner.Add(autoOwner);
+            if (!context.Material.Any())
+            {
+                var autoMaterial1 = new Circus_material()
+                {
+                    Name = "Clubs",
+                    Amount = 3,
+                    Categorie = "Juggling",
+                    Brand = "Mister Babache",
+                    in_use_date = new DateTime(2019, 3, 3),
+                };
+                context.Material.Add(autoMaterial1);
                 context.SaveChanges();
             }
 
