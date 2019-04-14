@@ -61,3 +61,18 @@
       meta: Meta;
       response: Response;
   }
+  export interface IMaterials {
+    id: number;
+    name: string;
+    amount: number;
+    categorie: string;
+    brand: string;
+    in_use_date: Date;
+}
+  export interface IOwners {
+    id: number;
+    firstname: string;
+    lastname: number;
+    age: number;
+    gender: string;
+}

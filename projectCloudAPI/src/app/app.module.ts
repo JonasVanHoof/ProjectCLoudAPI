@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { TrendingPageComponent } from './trending-page/trending-page.component';
 import { SearchPageComponent } from './search-page/search-page.component';
 import { PlacesPageComponent } from './places-page/places-page.component';
+import { CircusmaterialsComponent } from './circusmaterials/circusmaterials.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PlacesPageComponent } from './places-page/places-page.component';
     HeaderComponent,
     TrendingPageComponent,
     SearchPageComponent,
-    PlacesPageComponent
+    PlacesPageComponent,
+    CircusmaterialsComponent
   ],
   imports: [
     BrowserModule,

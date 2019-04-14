@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import 'interfacePlace';
 import { Keys } from './keys';
-import { RootObject, Venue } from 'interfacePlace';
+import { RootObject, Venue, IMaterials, IOwners } from 'interfacePlace';
 
 @Injectable({
   providedIn: 'root'
@@ -31,5 +31,11 @@ VENUE_ID :string;
   }
   searchVenue(word :string){
     return this.http.get<RootObject>("http://api.foursquare.com/v2/venues/search?&query=" + word + "&ll=" + this.longtitude + "," + this.latitude + "&radius=99999999&client_id="+ this.client_id +"&client_secret=" + this.client_secret +"&v=20190321");
+  }
+  getCircusMaterials(){
+    return this.http.get<IMaterials>("http://localhost:5000/api/Circus_material");
+  }
+  getOwners(){
+    return this.http.get<IOwners>("http://localhost:5000/api/Owners");
   }
 }
