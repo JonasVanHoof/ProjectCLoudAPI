@@ -12,13 +12,15 @@ namespace RestAPI.Models
         {
             context.Database.EnsureCreated();
 
+            
             var autoOwner = new Owner()
             {
-                Firstname = "Jonas",
+                Firstname = "Laura",
                 Lastname = "Van Hoof",
-                Age = 19,
+                Age = 21,
                 Gender = "male"
             };
+            context.Owner.Add(autoOwner);
 
             if (!context.Owner.Any())
             {
@@ -41,7 +43,6 @@ namespace RestAPI.Models
                 context.SaveChanges();
             }
 
-            context.Owner.Add(autoOwner);
             if (!context.Material.Any())
             {
                 var autoMaterial1 = new Circus_material()
@@ -52,7 +53,16 @@ namespace RestAPI.Models
                     Brand = "Mister Babache",
                     in_use_date = new DateTime(2019, 3, 3),
                 };
+                var autoMaterial2 = new Circus_material()
+                {
+                    Name = "Diabolo",
+                    Amount = 2,
+                    Categorie = "Diabolo",
+                    Brand = "Mister Babache",
+                    in_use_date = new DateTime(2019, 4, 3),
+                };
                 context.Material.Add(autoMaterial1);
+                context.Material.Add(autoMaterial2);
                 context.SaveChanges();
             }
 

@@ -72,14 +72,6 @@ namespace RestAPI.Controllers
             return NoContent();
         }
 
-        //[Route("query={name}")]
-        //[HttpGet]
-        //public ActionResult<Owner> getOwnerByName(string name)
-        //{
-        //    var theOwner = context.Owner.Find(name);
-        //    return theOwner;
-        //}
-
         [HttpPut]
         public ActionResult<Owner> UpdateOwner([FromBody] Owner owner)
         {
@@ -95,6 +87,19 @@ namespace RestAPI.Controllers
             context.SaveChanges();
             return Ok(update);
         }
+        [HttpGet]
+        public List<Owner> GetAllOwners(string firstname, string lastname, int? page, int lenght = 2)
+        {
+            IQueryable<Owner> query = context.Owner;
+            if (!string.IsNullOrWhiteSpace(firstname))
+                query = query.Where(o => o.Firstname == firstname);
+            if (!string.IsNullOrWhiteSpace(lastname))
+                query = query.Where(o => o.Lastname == lastname);
+            if(page.HasValue)
+                query = query.Skip(page.Value * lenght);
+            query = query.Take(lenght);
 
+            return query.ToList();
+        }
     }
 }

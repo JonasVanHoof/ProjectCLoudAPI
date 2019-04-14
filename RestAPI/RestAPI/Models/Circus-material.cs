@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -14,7 +15,8 @@ namespace RestAPI.Model
         public string Categorie { get; set; }
         public string Brand { get; set; }
         public DateTime in_use_date { get; set; }
-        public ICollection<Owner> Owner { get; set; }
+        [JsonIgnore]
+        public ICollection<Owner> owner { get; set; }
 
     }
 }
