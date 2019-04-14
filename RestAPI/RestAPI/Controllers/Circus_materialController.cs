@@ -69,7 +69,7 @@ namespace RestAPI.Controllers
             return Ok(update);
         }
         [HttpGet]
-        public List<Circus_material> GetAllMaterials(string name, int? page, int lenght = 2)
+        public List<Circus_material> GetAllMaterials(string name, int? page, string sort, int lenght = 2, string dir = "asc")
         {
             IQueryable<Circus_material> query = context.Material;
             if (!string.IsNullOrWhiteSpace(name))
@@ -78,6 +78,18 @@ namespace RestAPI.Controllers
                 query = query.Skip(page.Value * lenght);
             query = query.Take(lenght);
 
+            if (!string.IsNullOrWhiteSpace(sort))
+            {
+                switch (sort)
+                {
+                    case "name":
+                        if (dir == "asc")
+                            query = query.OrderBy(o => o.Name);
+                        else if (dir == "desc")
+                            query = query.OrderByDescending(o => o.Name);
+                        break;
+                }
+            }
             return query.ToList();
         }
     }

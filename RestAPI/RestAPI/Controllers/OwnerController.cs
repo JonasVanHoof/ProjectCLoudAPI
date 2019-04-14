@@ -88,7 +88,7 @@ namespace RestAPI.Controllers
             return Ok(update);
         }
         [HttpGet]
-        public List<Owner> GetAllOwners(string firstname, string lastname, int? page, int lenght = 2)
+        public List<Owner> GetAllOwners(string firstname, string lastname, string sort, int? page, int lenght = 2, string dir = "asc")
         {
             IQueryable<Owner> query = context.Owner;
             if (!string.IsNullOrWhiteSpace(firstname))
@@ -99,6 +99,24 @@ namespace RestAPI.Controllers
                 query = query.Skip(page.Value * lenght);
             query = query.Take(lenght);
 
+            if (!string.IsNullOrWhiteSpace(sort))
+            {
+                switch (sort)
+                {
+                    case "firstname":
+                        if (dir == "asc")
+                            query = query.OrderBy(o => o.Firstname);
+                        else if (dir == "desc")
+                            query = query.OrderByDescending(o => o.Firstname);
+                        break;
+                    case "lastname":
+                        if (dir == "asc")
+                            query = query.OrderBy(o => o.Firstname);
+                        else if (dir == "desc")
+                            query = query.OrderByDescending(o => o.Firstname);
+                        break;
+                }
+            }
             return query.ToList();
         }
     }
