@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef  } from '@angular/core';
 import { ApiService } from '../api.service';
 import { IMaterials } from 'interfacePlace';
 
@@ -9,6 +9,9 @@ import { IMaterials } from 'interfacePlace';
 })
 export class CircusmaterialsComponent implements OnInit {
   materials : IMaterials;
+  search : string;
+  materialSearched : any;
+ @ViewChild("search") inputSearch : ElementRef;
 
   constructor(private api : ApiService) {
     console.log("circusmaterial component");
@@ -20,5 +23,10 @@ export class CircusmaterialsComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  searchMaterial(){
+    this.search = this.inputSearch.nativeElement.value;
+    this.api.searchMaterial(this.search).subscribe(material => {
+      this.materialSearched = material.name;
+    });
+  }
 }

@@ -35,6 +35,9 @@ VENUE_ID :string;
   getCircusMaterials(){
     return this.http.get<IMaterials>("http://localhost:5000/api/Circus_material");
   }
+  searchMaterial(word :string){
+    return this.http.get<IMaterials>("http://localhost:5000/api/Circus_material");
+  }
   getOwners(){
     return this.http.get<IOwners>("http://localhost:5000/api/Owners");
   }

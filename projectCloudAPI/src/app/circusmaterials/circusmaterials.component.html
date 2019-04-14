@@ -1,3 +1,4 @@
+<input #search type="text" placeholder="search material">
 <ul *ngFor="let material of materials">
   <div>
     <li><strong>Material name: </strong>{{material.name}}</li>
@@ -5,5 +6,6 @@
     <li><strong>Category: </strong>{{material.category}}</li>
     <li><strong>Brand: </strong>{{material.brand}}</li>
     <li><strong>Day of purchase : </strong>{{material.in_use_date | date:'fullDate'}}</li>
+    <!-- <li><strong>Day of purchase : </strong>{{material.owner</li> -->
   </div>
 </ul>
