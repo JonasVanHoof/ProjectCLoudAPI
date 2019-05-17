@@ -87,7 +87,7 @@ namespace RestAPI.Controllers
             context.SaveChanges();
             return Ok(update);
         }
-        [HttpGet]
+        /*[HttpGet]
         public List<Owner> GetAllOwners(string firstname, string lastname, string sort, int? page, int lenght = 2, string dir = "asc")
         {
             IQueryable<Owner> query = context.Owner;
@@ -118,6 +118,6 @@ namespace RestAPI.Controllers
                 }
             }
             return query.ToList();
-        }
+        }*/
     }
 }

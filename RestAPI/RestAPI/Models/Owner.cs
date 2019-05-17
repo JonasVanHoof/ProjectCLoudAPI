@@ -9,8 +9,11 @@ namespace RestAPI.Model
     public class Owner
     {        
         public int Id { get; set; }
+        [Required]
         public string Firstname { get; set; }
+        [Required]
         public string Lastname { get; set; }
+        [Required]
         public int Age { get; set; }
         public string Gender { get; set; }
     }

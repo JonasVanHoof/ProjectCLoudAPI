@@ -68,8 +68,8 @@ namespace RestAPI.Controllers
             context.SaveChanges();
             return Ok(update);
         }
-        [HttpGet]
-        public List<Circus_material> GetAllMaterials(string name, string category int? page, string sort, int lenght = 2, string dir = "asc")
+        /*[HttpGet]
+        public List<Circus_material> GetAllMaterials(string name, string category, int? page, string sort, int lenght = 2, string dir = "asc")
         {
             IQueryable<Circus_material> query = context.Material;
             if (!string.IsNullOrWhiteSpace(name))
@@ -99,6 +99,6 @@ namespace RestAPI.Controllers
                 }
             }
             return query.ToList();
-        }
+        }*/
     }
 }
