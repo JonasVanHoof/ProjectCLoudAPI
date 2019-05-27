@@ -18,7 +18,7 @@ namespace RestAPI.Models
                 Firstname = "Laura",
                 Lastname = "Van Hoof",
                 Age = 21,
-                Gender = "male"
+                Gender = "female"
             };
             context.Owner.Add(autoOwner);
 

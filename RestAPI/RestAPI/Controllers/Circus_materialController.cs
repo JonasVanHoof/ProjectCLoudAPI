@@ -30,7 +30,7 @@ namespace RestAPI.Controllers
                 .ToList();
         }
 
-        [Route("id/{id}")]
+        [Route("id={id}")]
         public ActionResult<Circus_material> getMaterialById(int id)
         {
             var theMaterial = context.Material.Find(id);
@@ -68,7 +68,8 @@ namespace RestAPI.Controllers
             context.SaveChanges();
             return Ok(update);
         }
-        /*[HttpGet]
+        [Route("query")]
+        [HttpGet]
         public List<Circus_material> GetAllMaterials(string name, string category, int? page, string sort, int lenght = 2, string dir = "asc")
         {
             IQueryable<Circus_material> query = context.Material;
@@ -99,6 +100,6 @@ namespace RestAPI.Controllers
                 }
             }
             return query.ToList();
-        }*/
+        }
     }
 }
