@@ -17,11 +17,14 @@
       margin-left: 1em;
     }
     button{
-      line-height: 2em;
-      background: url("https://image.flaticon.com/icons/svg/49/49116.svg") no-repeat;
-      width: 2em;
-      height: 2em;
-      border: 0.5px solid black;
+      //line-height: 2em;
+      background: url("https://image.flaticon.com/icons/svg/49/49116.svg");
+      background-size: cover;
+      width: 1.5em;
+      height: 1.5em;
+      outline: none;
+      border: none;
+      margin-left: 1em;
 
     }
   }
