@@ -26,8 +26,15 @@ namespace RestAPI.Controllers
         public List<Circus_material> GetMatterials()
         {
             return context.Material
-                //.Include(o => o.owner)
+                .Include(o => o.owner)
                 .ToList();
+        }
+        [HttpPost]
+        public IActionResult CreateMaterial([FromBody]Circus_material newMaterial)
+        {
+            context.Material.Add(newMaterial);
+            context.SaveChanges();
+            return Created("", newMaterial);
         }
 
         [Route("id={id}")]

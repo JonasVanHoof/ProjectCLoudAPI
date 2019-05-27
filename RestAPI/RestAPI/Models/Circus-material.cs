@@ -17,8 +17,7 @@ namespace RestAPI.Model
         [Required]
         public string Categorie { get; set; }
         public string Brand { get; set; }
-        public DateTime in_use_date { get; set; }
-        [JsonIgnore]
+        public DateTime in_use_date { get; set; }        
         public ICollection<Owner> owner { get; set; }
 
     }
