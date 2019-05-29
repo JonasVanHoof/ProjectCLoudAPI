@@ -27,7 +27,7 @@ baseLink = 'http://api.foursquare.com/v2/';
   getplaces() {
     return this.http.get<RootObject>(this.baseLink + 'venues/search?ll=' + this.longtitude + ',' + this.latitude + '&client_id=' + this.client_id + '&client_secret=' + this.client_secret + '&v=20190321');
   }
-   gettrending() {
+  gettrending() {
     return this.http.get<(RootObject)>(this.baseLink + 'venues/trending?ll=' + this.longtitude + ',' + this.latitude + '&radius=' + this.radius + '&client_id=' + this.client_id + '&client_secret=' + this.client_secret + '&v=20190321');
   }
   searchVenue(word: string) {
@@ -41,5 +41,8 @@ baseLink = 'http://api.foursquare.com/v2/';
   }
   getOwners() {
     return this.http.get<IOwners>('http://localhost:5000/api/Owners');
+  }
+  getByID(id: number) {
+    return this.http.get<RootObject>(this.baseLink + 'venues/search?&id=' + id);
   }
 }

@@ -8,24 +8,35 @@ import { Venue } from 'interfacePlace';
   styleUrls: ['./search-page.component.scss']
 })
 export class SearchPageComponent implements OnInit {
-@ViewChild('search') inputSearch :ElementRef;
+@ViewChild('search') inputSearch: ElementRef;
+@ViewChild('searchID') inputSearchID: ElementRef;
 
-search :string;
-searchedPlaces :Venue[] = [];
+search: string;
+searchID: string;
+searchedPlaces: Venue[] = [];
+searchedID: Venue[] = [];
 
-  constructor(private api :ApiService) {
-    console.log("search component");
+  constructor(private api: ApiService) {
+    console.log('search component');
   }
 
   ngOnInit() {
   }
 
-  SearchGivenInput(){
+  SearchGivenInput() {
     this.search = this.inputSearch.nativeElement.value;
 
     this.api.searchVenue(this.search).subscribe((word => {
-      this.searchedPlaces = word.response.venues;;
-    }));;
+      this.searchedPlaces = word.response.venues;
+    }));
   }
+  SearchForID() {
+    console.log('getbyid');
+    this.searchID = this.inputSearchID.nativeElement.value;
 
+    this.api.getByID(this.searchID).subscribe((id => {
+      this.searchedID = id.response.venues;
+      console.log(this.searchedID);
+    }));
+  }
 }
