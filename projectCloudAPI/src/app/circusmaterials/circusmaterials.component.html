@@ -1,11 +1,33 @@
-<input #search type="text" placeholder="search material">
-<ul *ngFor="let material of materials">
+<body>
   <div>
-    <li><strong>Material name: </strong>{{material.name}}</li>
-    <li><strong>Amount: </strong>{{material.amount}}</li>
-    <li><strong>Category: </strong>{{material.category}}</li>
-    <li><strong>Brand: </strong>{{material.brand}}</li>
-    <li><strong>Day of purchase : </strong>{{material.in_use_date | date:'fullDate'}}</li>
-    <!-- <li><strong>Day of purchase : </strong>{{material.owner</li> -->
+      <input #search type="text" placeholder="search material">
+
+      <ul *ngFor="let material of materials">
+        <div>
+          <li><strong>Material name: </strong>{{material.name}}</li>
+          <li><strong>Amount: </strong>{{material.amount}}</li>
+          <li><strong>Category: </strong>{{material.category}}</li>
+          <li><strong>Brand: </strong>{{material.brand}}</li>
+          <li><strong>Day of purchase : </strong>{{material.in_use_date | date:'fullDate'}}</li>
+        </div>
+      </ul>
   </div>
-</ul>
+
+  <div>
+      <strong>Add material to the list:</strong>
+      <form>
+        <div>
+            <input [(ngModel)]="materialpost.name" type="text" placeholder="name" required>
+            <input [(ngModel)]="materialpost.amount" type="text" placeholder="amount" required>
+        </div>  
+        <div>
+            <input [(ngModel)]="materialpost.category" type="text" placeholder="category" required>
+            <input [(ngModel)]="materialpost.brand" type="text" placeholder="brand" required>
+        </div>  
+        <div>
+            <input [(ngModel)]="materialpost.in_use_date" type="text" placeholder="purchase date" required>
+        </div>  
+        <button (click)='postMaterial()'>Add</button>
+      </form>
+  </div>
+</body>

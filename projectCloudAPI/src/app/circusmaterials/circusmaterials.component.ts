@@ -32,13 +32,13 @@ export class CircusmaterialsComponent implements OnInit {
   }
 
   postMaterial() {
-    this.materialpost = {
-      name: 'jonas',
-      amount: 1,
-      brand: 'jonas',
-      categorie: 'human',
-      in_use_date: new Date('15061999')
-    }
+    // this.materialpost = {
+    //   name: 'jonas',
+    //   amount: 1,
+    //   brand: 'jonas',
+    //   categorie: 'human',
+    //   in_use_date: new Date('15061999')
+    // };
     this.api.postCircusMaterial(this.materialpost).subscribe(material => {
       console.log(material);
     });
