@@ -42,7 +42,7 @@ baseLink = 'http://api.foursquare.com/v2/';
   getOwners() {
     return this.http.get<IOwners>('http://localhost:5000/api/Owners');
   }
-  getByID(id: number) {
-    return this.http.get<RootObject>(this.baseLink + 'venues/search?&id=' + id);
+  getByID(id: string) {
+    return this.http.get<RootObject>(this.baseLink + 'venues/' + id + '?&client_id=' + this.client_id + '&client_secret=' + this.client_secret + '&v=20190321');
   }
 }

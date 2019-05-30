@@ -11,6 +11,20 @@
   </div>
 </div>
 
+
+<div class='idResult'>
+  <div>
+      <li>
+          <strong>{{searchedID.id}}</strong>
+          <p>{{searchedID.name}}</p>          
+          <p>{{searchedID.location.address}}</p>
+          <p>{{searchedID.likes.summary}}</p>
+          <p>{{searchedID.beenHere.count}} times visited</p>  <br>
+          <p>{{searchedID.description}}</p>            
+      </li>
+  </div>
+</div>
+
 <div class='showResult'>
   <p *ngIf='searchedPlaces.length == 0; else Search'> No search</p>
   <ng-template #Search>

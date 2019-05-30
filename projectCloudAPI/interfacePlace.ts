@@ -55,6 +55,7 @@
   export interface Response {
       venues: Venue[];
       confident: boolean;
+      venue: Venue;
   }
 
   export interface RootObject {

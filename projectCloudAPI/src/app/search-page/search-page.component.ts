@@ -14,7 +14,7 @@ export class SearchPageComponent implements OnInit {
 search: string;
 searchID: string;
 searchedPlaces: Venue[] = [];
-searchedID: Venue[] = [];
+searchedID: Venue;
 
   constructor(private api: ApiService) {
     console.log('search component');
@@ -35,8 +35,8 @@ searchedID: Venue[] = [];
     this.searchID = this.inputSearchID.nativeElement.value;
 
     this.api.getByID(this.searchID).subscribe((id => {
-      this.searchedID = id.response.venues;
-      console.log(this.searchedID);
+      this.searchedID = id.response.venue;
+      console.log(id.response.venue);
     }));
   }
 }
