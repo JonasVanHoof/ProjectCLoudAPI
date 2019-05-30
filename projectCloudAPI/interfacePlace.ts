@@ -63,7 +63,7 @@
       response: Response;
   }
   export interface IMaterials {
-    id: number;
+    id?: number;
     name: string;
     amount: number;
     categorie: string;
