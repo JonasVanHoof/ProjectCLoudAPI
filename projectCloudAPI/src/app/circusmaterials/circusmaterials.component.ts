@@ -8,11 +8,13 @@ import { IMaterials } from 'interfacePlace';
   styleUrls: ['./circusmaterials.component.scss']
 })
 export class CircusmaterialsComponent implements OnInit {
+  editOn = false;
   materials: IMaterials;
   search: string;
   materialSearched: IMaterials;
   materialpost: IMaterials;
  @ViewChild('search') inputSearch: ElementRef;
+ @ViewChild('nameChange') inputName: ElementRef;
 
   constructor(private api: ApiService) {
     console.log('circusmaterial component');
@@ -29,6 +31,7 @@ export class CircusmaterialsComponent implements OnInit {
     this.api.searchMaterial(Number(this.search)).subscribe(material => {
       this.materialSearched = material;
     });
+    console.log(this.editOn);
   }
   deleteMaterial() {
     this.search = this.inputSearch.nativeElement.value;
@@ -36,6 +39,13 @@ export class CircusmaterialsComponent implements OnInit {
     this.api.deleteMaterial(Number(this.search)).subscribe(material => {
       return console.log('material deleted');
     });
+  }
+  putMaterial() {
+    this.api.putMaterial(this.materialSearched).subscribe( material => {
+      material.name = this.inputName.nativeElement.value;
+      return this.materialSearched;
+    });
+    console.log('changed name');
   }
 
   postMaterial() {

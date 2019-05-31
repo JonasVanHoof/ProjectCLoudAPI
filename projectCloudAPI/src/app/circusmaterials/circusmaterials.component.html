@@ -7,11 +7,13 @@
         <div>
           <li><strong>Material ID: </strong>{{materialSearched.id}}</li>
           <li><strong>Material name: </strong>{{materialSearched.name}}</li>
+          <li id="inputName" *ngIf="editOn" ><input type="text"> <button>change</button></li>
           <li><strong>Amount: </strong>{{materialSearched.amount}}</li>
           <li><strong>Category: </strong>{{materialSearched.category}}</li>
           <li><strong>Brand: </strong>{{materialSearched.brand}}</li>
           <li><strong>Day of purchase : </strong>{{materialSearched.in_use_date | date:'fullDate'}}</li>
-          <button (click)=deleteMaterial() >delete</button>
+          <button (click)=deleteMaterial() >Delete</button>
+          <button id="editBtn" (click)="editOn = true" >Edit</button>
         </div>
       </ul>
 
