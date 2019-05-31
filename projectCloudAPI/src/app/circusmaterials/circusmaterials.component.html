@@ -1,6 +1,19 @@
 <body>
   <div>
       <input #search type="text" placeholder="search material">
+      <button id="searchbutton" (click)='searchMaterial()'>search</button>
+
+      <ul>
+        <div>
+          <li><strong>Material ID: </strong>{{materialSearched.id}}</li>
+          <li><strong>Material name: </strong>{{materialSearched.name}}</li>
+          <li><strong>Amount: </strong>{{materialSearched.amount}}</li>
+          <li><strong>Category: </strong>{{materialSearched.category}}</li>
+          <li><strong>Brand: </strong>{{materialSearched.brand}}</li>
+          <li><strong>Day of purchase : </strong>{{materialSearched.in_use_date | date:'fullDate'}}</li>
+          <button (click)=deleteMaterial() >delete</button>
+        </div>
+      </ul>
 
       <ul *ngFor="let material of materials">
         <div>
@@ -19,14 +32,14 @@
         <div>
             <input [(ngModel)]="materialpost.name" type="text" placeholder="name" required>
             <input [(ngModel)]="materialpost.amount" type="text" placeholder="amount" required>
-        </div>  
+        </div>
         <div>
             <input [(ngModel)]="materialpost.category" type="text" placeholder="category" required>
             <input [(ngModel)]="materialpost.brand" type="text" placeholder="brand" required>
-        </div>  
+        </div>
         <div>
             <input [(ngModel)]="materialpost.in_use_date" type="text" placeholder="purchase date" required>
-        </div>  
+        </div>
         <button (click)='postMaterial()'>Add</button>
       </form>
   </div>

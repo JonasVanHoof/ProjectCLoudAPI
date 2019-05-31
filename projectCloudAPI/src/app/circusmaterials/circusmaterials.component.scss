@@ -3,6 +3,9 @@ body{
   grid-template-columns: repeat(2, 50%);
   div{
     margin-top: 6em;
+    #searchbutton{
+      padding: 2px 2px;
+    }
     input{
       margin-left: 1em;
       text-align: left;
@@ -39,5 +42,3 @@ body{
     }
   }
 }
-
-

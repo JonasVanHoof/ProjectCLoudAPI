@@ -46,10 +46,11 @@ namespace RestAPI.Controllers
             else
                 return theMaterial;
         }
+        [Route("id={id}")]
         [HttpDelete]
         public IActionResult DeleteMaterial(int id)
         {
-            var theMaterial = context.Owner.Find(id);
+            var theMaterial = context.Material.Find(id);
             if (theMaterial == null)
             {
                 return NotFound();

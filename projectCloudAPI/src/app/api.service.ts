@@ -39,8 +39,11 @@ baseLink = 'http://api.foursquare.com/v2/';
   postCircusMaterial(material: IMaterials) {
     return this.http.post<IMaterials>('http://localhost:5000/api/Circus_material', material);
   }
-  searchMaterial(word: string) {
-    return this.http.get<IMaterials>('http://localhost:5000/api/Circus_material');
+  searchMaterial(id: number) {
+    return this.http.get<IMaterials>('http://localhost:5000/api/Circus_material/id=' + id);
+  }
+  deleteMaterial(id: number) {
+    return this.http.delete('http://localhost:5000/api/Circus_material/id=' + id);
   }
   getOwners() {
     return this.http.get<IOwners>('http://localhost:5000/api/Owners');
