@@ -7,11 +7,12 @@ import { CircusmaterialsComponent } from './circusmaterials/circusmaterials.comp
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  {path: "search", component: SearchPageComponent},
-  {path: "trending", component: TrendingPageComponent},
-  {path: "places", component: PlacesPageComponent},
-  {path: "circusMaterials", component: CircusmaterialsComponent},
-  {path: "login", component: LoginComponent},
+  {path: 'search', component: SearchPageComponent},
+  {path: 'trending', component: TrendingPageComponent},
+  {path: 'places', component: PlacesPageComponent},
+  {path: 'circusMaterials', component: CircusmaterialsComponent},
+  {path: 'login', component: LoginComponent},
+  {path: '**' , component: TrendingPageComponent},
 ];
 
 @NgModule({
