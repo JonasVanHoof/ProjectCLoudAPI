@@ -1,6 +1,6 @@
 <body>
   <div>
-      <input #search type="text" placeholder="search material">
+      <input #search type="text" placeholder="search id">
       <button id="searchbutton" (click)='searchMaterial()'>search</button>
 
       <ul>
@@ -33,14 +33,14 @@
       <form>
         <div>
             <input [(ngModel)]="materialpost.name" type="text" placeholder="name" required>
-            <input [(ngModel)]="materialpost.amount" type="text" placeholder="amount" required>
+            <input [(ngModel)]="materialpost.amount" type="number" placeholder="amount" required>
         </div>
         <div>
             <input [(ngModel)]="materialpost.category" type="text" placeholder="category" required>
             <input [(ngModel)]="materialpost.brand" type="text" placeholder="brand" required>
         </div>
         <div>
-            <input [(ngModel)]="materialpost.in_use_date" type="text" placeholder="purchase date" required>
+            <input [(ngModel)]="materialpost.in_use_date" type="date" placeholder="purchase date" required>
         </div>
         <button (click)='postMaterial()'>Add</button>
       </form>
