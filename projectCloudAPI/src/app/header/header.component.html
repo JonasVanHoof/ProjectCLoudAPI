@@ -7,7 +7,8 @@
     <button [routerLink]="['circusMaterials']" *ngIf="authService.isLoggedIn">Circus materials inventory</button>
   </div>
    <div>
-    <a *ngIf='!authService.isLoggedIn' (click)='authService.login()' >login</a>
-    <a (click)='authService.logout()' *ngIf='authService.isLoggedIn)' >logout</a>
+     <button class='login'>Login</button>
+    <!-- <button class='login' *ngIf='!authService.isLoggedIn' (click)='authService.login()' >login</button>
+    <button  class='login' (click)='authService.logout()' *ngIf='authService.isLoggedIn)' >logout</button> -->
   </div>
 </header>

@@ -30,4 +30,12 @@ $headerColor: rgb(59, 229, 206);
           color: rgb(0,0,0);
         }
       }
+    .login{
+      margin-top: 1em;
+      background: rgb(255,255,255);
+      border: none;
+      padding: 0.5em;
+      border-radius: 5px;
+      color: $headerColor;
+    }
   }
