@@ -1,9 +1,13 @@
 <header>
   <h2>Project CloudAPI</h2>
-  <div id="navtabs">
+    <div id="navtabs">
     <button [routerLink]="['places']" >Places</button>
     <button [routerLink]="['search']" >Search</button>
     <button [routerLink]="['trending']">Trending</button>
-    <button [routerLink]="['circusMaterials']">Circus materials inventory</button>
+    <button [routerLink]="['circusMaterials']" *ngIf="authService.isLoggedIn">Circus materials inventory</button>
+  </div>
+   <div>
+    <a *ngIf='!authService.isLoggedIn' (click)='authService.login()' >login</a>
+    <a (click)='authService.logout()' *ngIf='authService.isLoggedIn)' >logout</a>
   </div>
 </header>

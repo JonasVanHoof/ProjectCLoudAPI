@@ -6,11 +6,13 @@ import { PlacesPageComponent } from './places-page/places-page.component';
 import { CircusmaterialsComponent } from './circusmaterials/circusmaterials.component';
 import { LoginComponent } from './login/login.component';
 
+import { AuthGuard } from './auth/auth.guard';
+
 const routes: Routes = [
   {path: 'search', component: SearchPageComponent},
   {path: 'trending', component: TrendingPageComponent},
   {path: 'places', component: PlacesPageComponent},
-  {path: 'circusMaterials', component: CircusmaterialsComponent},
+  {path: 'circusMaterials', component: CircusmaterialsComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent},
   {path: '**' , component: TrendingPageComponent},
 ];

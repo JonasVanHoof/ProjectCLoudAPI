@@ -12,8 +12,9 @@ import { PlacesPageComponent } from './places-page/places-page.component';
 import { CircusmaterialsComponent } from './circusmaterials/circusmaterials.component';
 import { LoginComponent } from './login/login.component';
 
-import { AuthService } from './auth.service';
+import { AuthService } from './auth/auth.service';
 import { ApiService } from './api.service';
+import { AuthGuard } from './auth/auth.guard';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ApiService } from './api.service';
   ],
   providers: [
     AuthService,
-    ApiService
+    ApiService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
