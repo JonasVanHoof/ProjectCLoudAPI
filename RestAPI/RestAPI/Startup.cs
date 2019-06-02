@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -33,6 +34,21 @@ namespace RestAPI
                  )
              );
 
+            //services.AddDbContext<LibraryContext>(
+            //    DBconfig => DBconfig.UseMySQL(
+            //        Configuration.GetConnectionString("circus_materialDB")
+            //    )
+            //);
+            //services.AddAuthentication(options =>
+            //{
+            //    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            //    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            //}).AddJwtBearer(options =>
+            //{
+            //    options.Authority = 'https://jonasvanhoof.eu.auth0.com/';
+            //    options.Audience = 'http://localhost:4200';
+            //});
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -51,10 +67,17 @@ namespace RestAPI
             {
                 app.UseHsts();
             }
-
+            //app.UseAuthentication();
             app.UseHttpsRedirection();
             DBInitializer.Initialize(context);
-            app.UseMvc();
+            app.UseMvc(
+                //routes =>
+                //{
+                //    routes.MapRoute(
+                //      name: 'default',
+                //      template: '{controller=Home}/{action=Index}/{id?}');
+                //}
+                );
         }
     }
 }
