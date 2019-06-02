@@ -10,7 +10,6 @@ import { TrendingPageComponent } from './trending-page/trending-page.component';
 import { SearchPageComponent } from './search-page/search-page.component';
 import { PlacesPageComponent } from './places-page/places-page.component';
 import { CircusmaterialsComponent } from './circusmaterials/circusmaterials.component';
-import { LoginComponent } from './login/login.component';
 
 import { AuthService } from './auth/auth.service';
 import { ApiService } from './api.service';
@@ -24,7 +23,6 @@ import { AuthGuard } from './auth/auth.guard';
     SearchPageComponent,
     PlacesPageComponent,
     CircusmaterialsComponent,
-    LoginComponent
   ],
   imports: [
     BrowserModule,
