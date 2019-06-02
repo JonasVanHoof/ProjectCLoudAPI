@@ -11,7 +11,7 @@ using RestAPI.Models;
 namespace RestAPI.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize]
+    //[Authorize]
     [ApiController]
     public class Circus_materialController : Controller
     {
