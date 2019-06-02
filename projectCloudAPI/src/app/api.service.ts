@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import 'interfacePlace';
 import { Keys } from './keys';
 import { RootObject, Venue, IMaterials, IOwners } from 'interfacePlace';
+import { AuthService } from './auth/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ client_secret: string;
 VENUE_ID: string;
 baseLink = 'http://api.foursquare.com/v2/';
 
-  constructor( private http: HttpClient) {
+  constructor( private http: HttpClient, private authService: AuthService) {
     console.log('api init');
     this.keys = new Keys();
     this.client_id = this.keys.client_id;
@@ -36,6 +37,9 @@ baseLink = 'http://api.foursquare.com/v2/';
   getCircusMaterials() {
     return this.http.get<IMaterials>('http://localhost:5000/api/Circus_material');
   }
+  // , {
+  //   headers: new HttpHeaders().set('Authorization', `Bearer ${this.authService.accessToken}`)
+  // }
   postCircusMaterial(material: IMaterials) {
     return this.http.post<IMaterials>('http://localhost:5000/api/Circus_material', material);
   }

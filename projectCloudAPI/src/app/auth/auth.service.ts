@@ -29,6 +29,7 @@ export class AuthService {
   login() {
     // Auth0 authorize request
     this.auth0.authorize();
+    console.log('login');
   }
 
   handleLoginCallback() {
@@ -40,7 +41,7 @@ export class AuthService {
       } else if (err) {
         console.error(`Error: ${err.error}`);
       }
-      this.router.navigate(['/']);
+      this.router.navigate(['/trending']);
     });
   }
 
@@ -48,6 +49,7 @@ export class AuthService {
     this.auth0.checkSession({}, (err, authResult) => {
       if (authResult && authResult.accessToken) {
         this.getUserInfo(authResult);
+        console.log('get access token');
       }
     });
   }
@@ -77,6 +79,7 @@ export class AuthService {
       returnTo: 'http://localhost:4200',
       clientID: environment.auth.clientID
     });
+    console.log('logout');
   }
 
   get isLoggedIn(): boolean {

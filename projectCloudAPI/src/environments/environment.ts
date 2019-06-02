@@ -6,7 +6,7 @@ export const environment = {
   production: false,
 
   auth: {
-    clientID: '5cf27c415d1bbf06b147797e',
+    clientID: 'etQXBmxlniSbbwBkQRRVjF2N0Hjxe7yX',
     domain: 'jonasvanhoof.eu.auth0.com', // e.g., you.auth0.com
     audience: 'http://localhost:4200', // e.g., http://localhost:3001
     redirect: 'http://localhost:4200/callback',
