@@ -11,9 +11,10 @@ const routes: Routes = [
   {path: 'search', component: SearchPageComponent},
   {path: 'trending', component: TrendingPageComponent},
   {path: 'places', component: PlacesPageComponent},
-  {path: 'circusMaterials', component: CircusmaterialsComponent, canActivate: [AuthGuard]},
+  {path: 'circusMaterials', component: CircusmaterialsComponent},
   {path: '**' , component: TrendingPageComponent},
 ];
+// , canActivate: [AuthGuard]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

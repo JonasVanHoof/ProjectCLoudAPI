@@ -4,11 +4,11 @@
     <button [routerLink]="['places']" >Places</button>
     <button [routerLink]="['search']" >Search</button>
     <button [routerLink]="['trending']">Trending</button>
-    <button [routerLink]="['circusMaterials']" *ngIf="authService.isLoggedIn">Circus materials inventory</button>
+    <button [routerLink]="['circusMaterials']">Circus materials inventory</button>
+    <!-- *ngIf="authService.isLoggedIn" -->
   </div>
    <div>
-     <button class='login'>Login</button>
-    <!-- <button class='login' *ngIf='!authService.isLoggedIn' (click)='authService.login()' >login</button>
-    <button  class='login' (click)='authService.logout()' *ngIf='authService.isLoggedIn)' >logout</button> -->
+    <button class='login' *ngIf='!authService.isLoggedIn' (click)='authService.login()' >login</button>
+    <button  class='login' (click)='authService.logout()' *ngIf='authService.isLoggedIn' >logout</button>
   </div>
 </header>
