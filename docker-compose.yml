@@ -5,3 +5,10 @@ services:
     build: ./projectCloudAPI
     ports:
       - 8080:80
+    restart: unless-stopped
+  
+  api:
+    build: ./RestAPI
+    ports:
+      - 8081:80
+    restart: unless-stopped
