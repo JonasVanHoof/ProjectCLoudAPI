@@ -66,6 +66,10 @@ namespace RestAPI
             else
             {
                 app.UseHsts();
+                app.UseCors(builder =>
+                    builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader());
             }
             //app.UseAuthentication();
             app.UseHttpsRedirection();
