@@ -16,7 +16,7 @@ keys: Keys;
 client_id: string;
 client_secret: string;
 VENUE_ID: string;
-baseLink = 'http://api.foursquare.com/v2/';
+baseLink = 'https://api.foursquare.com/v2/';
 
   constructor( private http: HttpClient, private authService: AuthService) {
     console.log('api init');
