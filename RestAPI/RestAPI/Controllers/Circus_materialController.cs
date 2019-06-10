@@ -10,7 +10,7 @@ using RestAPI.Models;
 
 namespace RestAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     //[Authorize]
     [ApiController]
     public class Circus_materialController : Controller

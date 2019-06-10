@@ -35,25 +35,25 @@ baseLink = 'http://api.foursquare.com/v2/';
     return this.http.get<RootObject>(this.baseLink + 'venues/search?&query=' + word + '&ll=' + this.longtitude + ',' + this.latitude + '&radius=99999999&client_id=' + this.client_id + '&client_secret=' + this.client_secret + '&v=20190321');
   }
   getCircusMaterials() {
-    return this.http.get<IMaterials>('http://localhost:5000/api/Circus_material');
+    return this.http.get<IMaterials>('https://api.jonasvanhoof.me/Circus_material');
   }
   // , {
   //   headers: new HttpHeaders().set('Authorization', `Bearer ${this.authService.accessToken}`)
   // }
   postCircusMaterial(material: IMaterials) {
-    return this.http.post<IMaterials>('http://localhost:5000/api/Circus_material', material);
+    return this.http.post<IMaterials>('https://api.jonasvanhoof.me/Circus_material', material);
   }
   searchMaterial(id: number) {
-    return this.http.get<IMaterials>('http://localhost:5000/api/Circus_material/id=' + id);
+    return this.http.get<IMaterials>('https://api.jonasvanhoof.me/Circus_material/id=' + id);
   }
   deleteMaterial(id: number) {
-    return this.http.delete('http://localhost:5000/api/Circus_material/id=' + id);
+    return this.http.delete('https://api.jonasvanhoof.me/Circus_material/id=' + id);
   }
   putMaterial(material: IMaterials) {
-    return this.http.put<IMaterials>('http://localhost:5000/api/Circus_material', material);
+    return this.http.put<IMaterials>('https://api.jonasvanhoof.me/Circus_material', material);
   }
   getOwners() {
-    return this.http.get<IOwners>('http://localhost:5000/api/Owners');
+    return this.http.get<IOwners>('https://api.jonasvanhoof.me/Owners');
   }
   getByID(id: string) {
     return this.http.get<RootObject>(this.baseLink + 'venues/' + id + '?&client_id=' + this.client_id + '&client_secret=' + this.client_secret + '&v=20190321');

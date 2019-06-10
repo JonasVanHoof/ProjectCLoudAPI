@@ -9,7 +9,7 @@ using RestAPI.Models;
 
 namespace RestAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class OwnerController : Controller
     {
