@@ -1,7 +1,7 @@
-FROM mcr.microsoft.com/dotnet/core/runtime
+FROM microsoft/dotnet:aspnetcore-runtime
 
 WORKDIR /usr/local/API
 
-COPY ./RestAPI/bin/Release/netcoreapp2.1/ .
+COPY ./RestAPI/out/ .
 
-CMD [ "dotnet", "RestAPI.dll" ]
+ENTRYPOINT [ "dotnet", "RestAPI.dll" ]

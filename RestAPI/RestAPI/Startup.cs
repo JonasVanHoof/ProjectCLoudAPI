@@ -28,17 +28,17 @@ namespace RestAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<LibraryContext>(
-                 DBconfig => DBconfig.UseSqlServer(
-                     Configuration.GetConnectionString("circus_materialDB")
-                 )
-             );
+            // services.AddDbContext<LibraryContext>(
+            //      DBconfig => DBconfig.UseSqlServer(
+            //          Configuration.GetConnectionString("local")
+            //      )
+            //  );
 
-            //services.AddDbContext<LibraryContext>(
-            //    DBconfig => DBconfig.UseMySQL(
-            //        Configuration.GetConnectionString("circus_materialDB")
-            //    )
-            //);
+            services.AddDbContext<LibraryContext>(
+               DBconfig => DBconfig.UseSqlServer(
+                   Configuration.GetConnectionString("external")
+               )
+            );
             //services.AddAuthentication(options =>
             //{
             //    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;

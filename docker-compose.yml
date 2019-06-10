@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3.3'
 
 services:
   angular:
@@ -6,9 +6,16 @@ services:
     ports:
       - 8080:80
     restart: unless-stopped
-  
+
   api:
     build: ./RestAPI
     ports:
       - 8081:80
+    restart: unless-stopped
+  
+  database:
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Vn7NYgC2mN8C
     restart: unless-stopped
