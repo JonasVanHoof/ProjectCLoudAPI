@@ -64,7 +64,7 @@ var ApiService = /** @class */ (function () {
         this.longtitude = 51.23;
         this.latitude = 4.41;
         this.radius = 3000;
-        this.baseLink = 'http://api.foursquare.com/v2/';
+        this.baseLink = 'https://api.foursquare.com/v2/';
         console.log('api init');
         this.keys = new _keys__WEBPACK_IMPORTED_MODULE_4__["Keys"]();
         this.client_id = this.keys.client_id;
@@ -80,25 +80,25 @@ var ApiService = /** @class */ (function () {
         return this.http.get(this.baseLink + 'venues/search?&query=' + word + '&ll=' + this.longtitude + ',' + this.latitude + '&radius=99999999&client_id=' + this.client_id + '&client_secret=' + this.client_secret + '&v=20190321');
     };
     ApiService.prototype.getCircusMaterials = function () {
-        return this.http.get('http://localhost:5000/api/Circus_material');
+        return this.http.get('https://api.jonasvanhoof.me/Circus_material');
     };
     // , {
     //   headers: new HttpHeaders().set('Authorization', `Bearer ${this.authService.accessToken}`)
     // }
     ApiService.prototype.postCircusMaterial = function (material) {
-        return this.http.post('http://localhost:5000/api/Circus_material', material);
+        return this.http.post('https://api.jonasvanhoof.me/Circus_material', material);
     };
     ApiService.prototype.searchMaterial = function (id) {
-        return this.http.get('http://localhost:5000/api/Circus_material/id=' + id);
+        return this.http.get('https://api.jonasvanhoof.me/Circus_material/id=' + id);
     };
     ApiService.prototype.deleteMaterial = function (id) {
-        return this.http.delete('http://localhost:5000/api/Circus_material/id=' + id);
+        return this.http.delete('https://api.jonasvanhoof.me/Circus_material/id=' + id);
     };
     ApiService.prototype.putMaterial = function (material) {
-        return this.http.put('http://localhost:5000/api/Circus_material', material);
+        return this.http.put('https://api.jonasvanhoof.me/Circus_material', material);
     };
     ApiService.prototype.getOwners = function () {
-        return this.http.get('http://localhost:5000/api/Owners');
+        return this.http.get('https://api.jonasvanhoof.me/Owners');
     };
     ApiService.prototype.getByID = function (id) {
         return this.http.get(this.baseLink + 'venues/' + id + '?&client_id=' + this.client_id + '&client_secret=' + this.client_secret + '&v=20190321');
