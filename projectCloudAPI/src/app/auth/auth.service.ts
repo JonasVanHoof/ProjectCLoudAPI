@@ -76,15 +76,13 @@ export class AuthService {
     // Ensure that returnTo URL is specified in Auth0
     // Application settings for Allowed Logout URLs
     this.auth0.logout({
-      returnTo: 'https://jonoasvanhoof.me/trending',
+      returnTo: 'https://jonasvanhoof.me/trending',
       clientID: environment.auth.clientID
     });
     console.log('logout');
   }
 
   get isLoggedIn(): boolean {
-    // Check if current date is before token
-    // expiration and user is signed in locally
     return Date.now() < this.expiresAt && this.authenticated;
   }
 

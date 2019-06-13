@@ -422,15 +422,13 @@ var AuthService = /** @class */ (function () {
         // Ensure that returnTo URL is specified in Auth0
         // Application settings for Allowed Logout URLs
         this.auth0.logout({
-            returnTo: 'https://jonoasvanhoof.me/trending',
+            returnTo: 'https://jonasvanhoof.me/trending',
             clientID: _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].auth.clientID
         });
         console.log('logout');
     };
     Object.defineProperty(AuthService.prototype, "isLoggedIn", {
         get: function () {
-            // Check if current date is before token
-            // expiration and user is signed in locally
             return Date.now() < this.expiresAt && this.authenticated;
         },
         enumerable: true,
@@ -862,27 +860,16 @@ var TrendingPageComponent = /** @class */ (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
 var environment = {
     production: false,
     auth: {
         clientID: 'etQXBmxlniSbbwBkQRRVjF2N0Hjxe7yX',
         domain: 'jonasvanhoof.eu.auth0.com',
-        audience: 'http://localhost:4200',
-        redirect: 'http://localhost:4200/callback',
+        audience: 'http://jonasvanhoof.me/circusMaterials',
+        redirect: 'http://jonasvanhoof.me/callback',
         scope: 'openid profile email'
     }
 };
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
 
 
 /***/ }),
